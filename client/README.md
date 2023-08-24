@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Component
+
+ng g --help // Avoir le guide d'aide pour générer
+ng g c {nom} --dry-run //Créer un nouveau composant qui va créer 4 nouveau fichiers (dont un de test) et met a jour le fichier module
+ng g c {nom} --skip-tests --dry-run // Créer 3 nouveaux sans celui des tests et met a jour le fichier module
+L'option --dry-run ne fait aucune modification et il faut l'enlever de la commande afin de créer les fichiers
+
+Pour les composants bnootstrap il est possible d'utilser le site ngx bootstrap et d'installer les composants automaiquement dans l'onglet API ou manuelle si les ppaquets ne sont pas encore mis a jour pour la derniere version d'angular
+
+## Services
+
+ng g s {localisation} --skip-tests // Permet de créer un service a l'endroit que l'on a choisi
+
+## Observables
+
+Revoir lesson 56
+
+## Persistance
+
+on va stocker nos datas dans le stockage du navigateur
+
+## Comunication PArent Enfant / Enfant parent
+
+Voir lesson 61 et 62 pour la syntaxe
+
+## Map Function
+
+Fonction register par exemple si on a besoin d'utiliser la valeur de retour de notre requete http il faut la retourner la fonction map avant sinon elle sera undefined
+Ceci est un exemple si on veut l'utiliser dans le next du subscribe du register dans register.component.ts il faut le retourner dans la fonction map du register dans l'accountservices

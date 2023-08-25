@@ -55,3 +55,15 @@ Voir lesson 61 et 62 pour la syntaxe
 
 Fonction register par exemple si on a besoin d'utiliser la valeur de retour de notre requete http il faut la retourner la fonction map avant sinon elle sera undefined
 Ceci est un exemple si on veut l'utiliser dans le next du subscribe du register dans register.component.ts il faut le retourner dans la fonction map du register dans l'accountservices
+
+## Angular Guards
+
+Permet de sécuriser des liens afin que les utilisateurs non autorisé ne puisse rejoindre une page dus site
+
+ng g g rep nomfichier
+
+# Modules
+
+Pour créer un module ng g m rep => ng g m \_modules/shared va créer le répertoire \_modules/shared et un fichier shared.modules.ts
+
+ng g m \_modules/shared --flat va créer un rep \_modules et un fichier shared.modules.ts

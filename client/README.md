@@ -67,3 +67,16 @@ ng g g rep nomfichier
 Pour créer un module ng g m rep => ng g m \_modules/shared va créer le répertoire \_modules/shared et un fichier shared.modules.ts
 
 ng g m \_modules/shared --flat va créer un rep \_modules et un fichier shared.modules.ts
+
+## Gestion des Erreurs MiddleWare
+
+Création d'un rep et une classe pour gérer les erreurs
+Ensuite création d'un dossiter middleware et d'une classe pour les gerer
+
+La méthode InvokeAsync doit etre appelée ainsi pour qu'elle soit reconnue et le parametre httpContext va permettre d'avoir access a la requete qui est en train de passer par le middleware
+
+Au niveau du client création d'un composant error
+
+Pour installer un intercepteur d'erreur qui va permettre de les intercepter et de les afficher via le toastr a l'utilisateur pour lui dire qu'il n'est pas autorisé de faire ce qu'il a tenté
+
+ng g interceptor \_interceptors/error --skip-tests => le nom du repertoire peut etre différent

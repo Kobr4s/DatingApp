@@ -50,7 +50,6 @@ namespace API.Controllers
         }
 
         [HttpPost("login")] //Post: api/account/login
-
         public async Task<ActionResult<userDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
@@ -72,6 +71,7 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user)
             };
         }
+
         private async Task<bool> UserExists(string username)
         {
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());

@@ -1,5 +1,7 @@
+using API.Data;
 using API.Extensions;
 using API.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,5 +24,21 @@ app.UseAuthentication();                // Permet de voir si on a un token valid
 app.UseAuthorization();                 // Ok vous avez un token valide et que pouvez vous faire avec
 
 app.MapControllers();
+
+// Permet de créer la base de données si elle n'existe pas et d'envoyer des données dans celle-ci
+
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    await context.Database.MigrateAsync();
+    await Seed.SeedUsers(context);
+}
+catch (Exception ex)
+{
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "An Error occured during migration");
+}
 
 app.Run();

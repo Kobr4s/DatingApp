@@ -80,3 +80,23 @@ Au niveau du client création d'un composant error
 Pour installer un intercepteur d'erreur qui va permettre de les intercepter et de les afficher via le toastr a l'utilisateur pour lui dire qu'il n'est pas autorisé de faire ce qu'il a tenté
 
 ng g interceptor \_interceptors/error --skip-tests => le nom du repertoire peut etre différent
+
+## Repository Pattern
+
+C'est une couche en plus entre le controller et le dbcontext qui va contenir la logique DB
+
+## AutoMapper
+
+Outil qui va permettre d'ecrire moins de code et gérer nos relations
+Class de depart vers classe ou on va => CreateMap<depart, arrivée>()
+Creation d'un rep helpers avec une class automapperprofiles
+
+AppUser a une prop dateofBirth et memberdto une prop Age
+=> vu qu'on a créer une fonction getAge dans appuser, automapper est assez intelligent pour savoir que c'est en relation => d'ou l'importance du nom de la fonction.
+
+Ensuite, il faut ajouter le service automapper dans le fichier application services Extension
+
+Dans le controller ou l'on veut utiliser automapper l'injecter dans le constructeur voir userController
+
+On a rajouter un champ dans memberDto pour l'url de la photo et étant donné que celui-ci ne correspond a aucun champ d'un appuser, automapper ne sait rien faire avec et sa valeur est nulle.
+Afin de lui assigner une valeur il faut l'indiquer dans le fichier automapper et ajouter la fonction formember a notre createmap

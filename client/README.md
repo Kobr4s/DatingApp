@@ -81,6 +81,8 @@ Pour installer un intercepteur d'erreur qui va permettre de les intercepter et d
 
 ng g interceptor \_interceptors/error --skip-tests => le nom du repertoire peut etre différent
 
+Ensuite pour loader un interceptor il faut l'ajouter dans le fichier app.Module dans providers
+
 ## Repository Pattern
 
 C'est une couche en plus entre le controller et le dbcontext qui va contenir la logique DB
@@ -100,3 +102,33 @@ Dans le controller ou l'on veut utiliser automapper l'injecter dans le construct
 
 On a rajouter un champ dans memberDto pour l'url de la photo et étant donné que celui-ci ne correspond a aucun champ d'un appuser, automapper ne sait rien faire avec et sa valeur est nulle.
 Afin de lui assigner une valeur il faut l'indiquer dans le fichier automapper et ajouter la fonction formember a notre createmap
+
+## Section 8 SUmmary
+
+Entity Fmk relationship -> AppUser - Photo
+Entinty FMW convention -> Définition de la relation entre user et photo en s'assurant qu'une photo ne peut etre ajouté que pour un user
+Seeding data in Database
+Repository pattern -> Ajoute une couche d'abstraction entre nos controller et la DB
+Auto mapper
+
+## Renomage
+
+Si apres un soucis de case apres avoir renommer un fichier => utiliser la commande developper relaod window
+
+## Generateur
+
+Il existe sur le net des generateurs par exemple object json en interface TS
+
+## Environments
+
+ng g environments permet de créer deux fichiers ou l'on va stocker des valeurs un pour le dev et un pour la prod
+
+on va y stocker la valeur de notre url par exemple
+
+## Bootstrap
+
+Pour ajouter un composant boostrap angular allez sur le site ngx-bootstrap, choisir son composant puis l'ajouter dans le fichier sharedmodule
+
+## Upload photo pour angular
+
+pour la version 16 on a installé ng gallery pour les photos

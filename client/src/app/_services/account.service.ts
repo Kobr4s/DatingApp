@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../_models/user';
+import { environment } from 'src/environments/environment';
 
 // Cette annotation permet d'injecter notre service 
 // providedIn Root nous dit qu'il l'envoie dans le fichier app.modules dans le tableau provider
@@ -12,7 +13,7 @@ import { User } from '../_models/user';
 // C'est un singleton qui est créé au démarage de notre application et détruit à la fermeture de celle-ci
 
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   private currentUserSource = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSource.asObservable();                 // le '$' indique que c'est unobservable 
 

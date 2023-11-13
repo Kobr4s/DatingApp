@@ -132,3 +132,27 @@ Pour ajouter un composant boostrap angular allez sur le site ngx-bootstrap, choi
 ## Upload photo pour angular
 
 pour la version 16 on a installé ng gallery pour les photos
+
+## Section 9 SUmmary
+
+Usingf typescrit type
+use interceptors token => qui va récupérer les données du token pour nous
+use bootstrap
+photo third party
+
+## View child
+
+Pour le composant member-edit on a un formulaire et afin de reset la box d'alert et de desactiver notre bouton, on aimerait reset ca dans notre fonction updateMember mais on n'a pas access a notre formulaire.
+
+Afin d'y avoir access on va utilser @ViewChild Décorator
+
+## Update
+
+En mode dev, les updates se font instantatnément mais en mode prod, il faut laisser un certain délai pour contacter le server c'est pour cela qu'on ajouter des spinner de cahrgement afin de mettre en place le delai apres la modification d'un profil user par exemple
+Ajout du spinner dans le fichier angular.json puis dans le fichier sharedmodule et ensuite creation d'un service busy
+
+Création d'un nouvel interceptor loading afin de capter ces requetes
+
+Attention les services sont disponible toute la durée de vie de notre application tandis que les composants sont détruits a chaque fois
+
+Nous allons stocker les infos de la liste dans le service member afin de ne pas devoir les rechargé en permanence et ainsi ils seront disponible toute la durée de notre application que si on les avait stocké dans notre composant member list ils seraient detruits
